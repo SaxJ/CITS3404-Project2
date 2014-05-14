@@ -1,0 +1,18 @@
+.panel {
+	background-color: #333;
+	color: #FFF;
+	height: 300px;
+	font-size: 30px;
+	width: 100%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.pane_content {
+	padding: 20px;
+}
+
+.panel h1 {
+	font-family: 'Special Elite', cursive;
+	color: #BF1111;
+}

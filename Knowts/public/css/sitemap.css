@@ -1,0 +1,76 @@
+.content {
+	bottom: 0px;
+}
+
+.tree_container {
+	color: #FFF;
+	text-align: center;
+	padding: 10px;
+}
+
+.tree_container h1 {
+	color: #BF1111;
+}
+
+.tree_container table {
+	width: 450px;
+	height: 450px;
+	margin: 0 auto 0 auto;
+	-webkit-animation: rotationcw 120s infinite linear;
+	-moz-animation: rotationcw 120s infinite linear;
+	-o-animation: rotationcw 120s infinite linear;
+}
+
+td {
+	width: 150px;
+	height: 150px;
+	border-radius: 75px;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 25px;
+	-webkit-animation: rotationacw 120s infinite linear;
+	-moz-animation: rotationacw 120s infinite linear;
+	-o-animation: rotationacw 120s infinite linear;
+}
+
+td.globe {
+	color: black;
+	background-color: white;
+	transition: all 0.4s;
+}
+
+td.globe:hover {
+	color: black;
+	background-color: #999;
+	cursor: pointer;
+}
+
+@-webkit-keyframes rotationcw {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
+}
+
+@-o-keyframes rotationcw {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
+}
+
+@-moz-keyframes rotationcw {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
+}
+
+@-webkit-keyframes rotationacw {
+    from {-webkit-transform: rotate(359deg);}
+    to   {-webkit-transform: rotate(0deg);}
+}
+
+@-o-keyframes rotationacw {
+    from {-webkit-transform: rotate(359deg);}
+    to   {-webkit-transform: rotate(0deg);}
+}
+
+@-moz-keyframes rotationacw {
+    from {-webkit-transform: rotate(359deg);}
+    to   {-webkit-transform: rotate(0deg);}
+}
