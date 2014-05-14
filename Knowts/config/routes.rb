@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :items
+
+  resources :lists
+
+  resources :workspaces
+
   devise_for :users
   resources :users
 
