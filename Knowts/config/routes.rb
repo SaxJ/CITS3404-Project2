@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get '/index' => 'home#index'
   get '/about' => 'home#about'
   get '/sitemap' => 'home#sitemap'
+  get '/login' => 'accounts#sign_in'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

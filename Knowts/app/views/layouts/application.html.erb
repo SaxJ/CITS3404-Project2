@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="/css/about.css">
   <link rel="stylesheet" href="/css/sitemap.css">
+  <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
 
@@ -18,18 +19,18 @@
     Knowts
   </div>
   <div class="right">
-    <a href="index.html">
+    <a href="/index.html">
       <div>Home</div>
     </a>
-    <a href="about.html">
+    <a href="/about.html">
       <div>About</div>
     </a>
     <% if not user_signed_in? %>
-        <a href="login.html">
+        <a href="/login.html">
           <div>Login/Signup</div>
         </a>
     <% else %>
-        <a href="app">
+        <a href="/app">
           <div><%= current_user.name %></div>
         </a>
     <% end %>
