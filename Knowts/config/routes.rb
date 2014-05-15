@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'accounts/sign_in'
+
+  get 'accounts/sign_out'
+
   resources :items
 
   resources :lists
