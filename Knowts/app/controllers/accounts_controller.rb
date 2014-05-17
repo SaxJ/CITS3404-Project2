@@ -4,4 +4,7 @@ class AccountsController < ApplicationController
 
   def sign_out
   end
+
+  def register
+  end
 end

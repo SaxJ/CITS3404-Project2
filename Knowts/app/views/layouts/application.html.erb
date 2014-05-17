@@ -4,7 +4,6 @@
   <title>Knowts</title>
   <link href='http://fonts.googleapis.com/css?family=Gilda+Display%7CPoiret+One%7CSpecial+Elite' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="/css/about.css">
   <link rel="stylesheet" href="/css/sitemap.css">
@@ -30,9 +29,9 @@
           <div>Login/Signup</div>
         </a>
     <% else %>
-        <a href="/app">
-          <div><%= current_user.name %></div>
-        </a>
+        <%= form_tag('/users/sign_out', method: 'delete', id: 'signout_form') do %>
+            <div id="sign_out_button">Logout</div>
+        <% end %>
     <% end %>
   </div>
 </div>
@@ -53,5 +52,6 @@
     </p>
   </div>
 </div>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

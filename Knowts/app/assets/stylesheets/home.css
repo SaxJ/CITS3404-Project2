@@ -14,6 +14,14 @@ a, a:hover, a:active {
     border: none;
 }
 
+#signout_form {
+    display: inline;
+}
+
+#sign_out_button {
+    display: inline;
+}
+
 /*
 /////////////////
 HEADER
