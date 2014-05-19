@@ -1,10 +1,14 @@
 class WorkspacesController < ApplicationController
   before_action :set_workspace, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /workspaces
   # GET /workspaces.json
   def index
-    @workspaces = Workspace.all
+    @workspaces = Workspace.select {|ws| ws.users.include? current_user }
+    unless @workspaces
+      redirect_to new_workspace_path
+    end
   end
 
   # GET /workspaces/1
@@ -25,6 +29,8 @@ class WorkspacesController < ApplicationController
   # POST /workspaces.json
   def create
     @workspace = Workspace.new(workspace_params)
+    @workspace.owner = current_user.id
+    @workspace.users << current_user
 
     respond_to do |format|
       if @workspace.save
