@@ -110,3 +110,27 @@ NEW WORKSPACE PAGE
 .create_workspace_form .field div {
 
 }
+
+/*
+INDIVIDUAL WORKSPACE VIEW
+*/
+.workspace_page {
+    color: white;
+    padding: 10px;
+}
+
+.workspace_page .route {
+    float: right;
+    margin-right: 10px;
+}
+
+.workspace_page .route a {
+    color: white;
+}
+
+.workspace_page .name {
+    color: #BF1111;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 26px;
+}
