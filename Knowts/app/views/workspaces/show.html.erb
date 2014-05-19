@@ -1,14 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @workspace.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @workspace.description %>
-</p>
-
-<%= link_to 'Edit', edit_workspace_path(@workspace) %> |
-<%= link_to 'Back', workspaces_path %>
+<div class="workspace_page">
+  <div id="notice"><%= notice %></div>
+  <div class="route">
+    <%= link_to 'Edit', edit_workspace_path(@workspace) %> |
+    <%= link_to 'Back', workspaces_path %>
+  </div>
+  <div class="name"><%= @workspace.name %></div>
+  <div class="description"><%= @workspace.description %></div>
+  <div class="users"></div>
+  <div class="lists">
+    <% @workspace.lists.each do |list| %>
+        <div class="list">
+          <div class="list_name"><%= list.name %></div>
+          <div class="list_items">
+              <% list.items.each do |item| %>
+                <div class="item">
+                  <div class="edit"></div>
+                  <div class="delete"></div>
+                  <div class="users"></div>
+                  <div class="content"><%= item.content %></div>
+                </div>
+              <% end %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
