@@ -1,14 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/index'
-
-  get 'home/about'
-
-  get 'home/sitemap'
-
-  get 'accounts/sign_in'
-
-  get 'accounts/sign_out'
-
   resources :items
 
   resources :lists
@@ -28,6 +18,7 @@ Rails.application.routes.draw do
   get '/sitemap' => 'home#sitemap'
   get '/login' => 'accounts#sign_in'
   get '/signup' => 'accounts#register'
+  get '/app' => 'workspaces#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

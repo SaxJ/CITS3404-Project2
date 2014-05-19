@@ -1,4 +1,72 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+.workspace_list > h1 {
+    color: white;
+}
+
+.workspace_list > h1 em {
+    color: #BF1111;
+    font-style: normal;
+}
+
+.workspace_list .workspace {
+    background-color: white;
+    padding: 5px;
+    margin: 8px;
+    display: inline-block;
+    width: 110px;
+    min-height: 100px;
+    overflow: hidden;
+    max-height: 150px;
+    vertical-align: top;
+    position: relative;
+}
+
+.workspace > a {
+    background-color: white;
+    display: block;
+}
+
+.workspace > a:first-child {
+    text-align: right;
+    margin-bottom: 8px;
+}
+
+.workspace div {
+    margin: 5px 0 5px 0;
+    overflow: hidden;
+}
+
+.workspace .name {
+    color: #BF1111;
+    margin-bottom: 10px;
+    border-bottom: 1px #CCC solid;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.workspace .delete {
+    color: #BF1111;
+    display: inline-block;
+    font-weight: bolder;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.workspace .delete:hover {
+    background-color: red;
+    color: white;
+}
+
+.workspace > .new_workspace {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    font-size: 120px;
+    text-align: center !important;
+    line-height: 120px;
+}

@@ -1,27 +1,19 @@
-<h1>Listing workspaces</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @workspaces.each do |workspace| %>
-      <tr>
-        <td><%= workspace.name %></td>
-        <td><%= workspace.description %></td>
-        <td><%= link_to 'Show', workspace %></td>
-        <td><%= link_to 'Edit', edit_workspace_path(workspace) %></td>
-        <td><%= link_to 'Destroy', workspace, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="workspace_list">
+  <h1>Here are your workspaces, <em><%= current_user.name %></em></h1>
+  <% @workspaces.each do |workspace| %>
+    <div class="workspace">
+      <%= link_to workspace, method: :delete do %>
+          <div class="delete">X</div>
+      <% end %>
+      <%= link_to workspace do %>
+          <div class="name"><%= workspace.name %></div>
+          <div class="description"><%= workspace.description %></div>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="workspace">
+    <%= link_to new_workspace_path, class: 'new_workspace' do %>
+        +
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Workspace', new_workspace_path %>
+  </div>
+</div>
