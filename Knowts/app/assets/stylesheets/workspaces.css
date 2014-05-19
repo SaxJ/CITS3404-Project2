@@ -1,3 +1,6 @@
+/*
+THE WORKSPACE LISTING PAGE
+*/
 .workspace_list > h1 {
     color: white;
 }
@@ -69,4 +72,41 @@
     font-size: 120px;
     text-align: center !important;
     line-height: 120px;
+}
+
+/*
+NEW WORKSPACE PAGE
+*/
+.create_workspace_form > form {
+    color: white;
+}
+
+.create_workspace_form > form > div {
+    display: block;
+    height: auto;
+    text-align: center;
+}
+
+.create_workspace_form h1 {
+    margin-left: 20px;
+    color: white;
+}
+
+.create_workspace_form #error_explanation {
+    padding: 10px;
+    border: 2px solid #000000;
+    background-color: #BF1111;
+    color: white;
+    -webkit-box-shadow: inset 0px 0px 36px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 36px 5px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 36px 5px rgba(0,0,0,0.75);
+    text-align: left;
+}
+
+.create_workspace_form .field {
+
+}
+
+.create_workspace_form .field div {
+
 }
