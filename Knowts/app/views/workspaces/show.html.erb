@@ -14,16 +14,31 @@
           <div class="list_items">
               <% list.items.each do |item| %>
                 <div class="item">
-                  <div class="edit"></div>
-                  <div class="delete"></div>
-                  <div class="users"></div>
-                  <div class="content"><%= item.content %></div>
+                  <div class="item_edit"></div>
+                  <div class="item_delete"></div>
+                  <div class="item_users"></div>
+                  <div class="item_content"><%= item.content %></div>
+                  <div class="item_due">Due: <%= item.due.strftime("%d/%m/%y %H:%M") %></div>
                 </div>
               <% end %>
+              <div class="item" id="add_list_item">
+                <%= form_for [list, Item.new] do |f| %>
+                    <div class="field">
+                      <%= f.text_field :content, placeholder: 'Note' %>
+                    </div>
+                    <div class="field">
+                      <%= f.label :due %>
+                      <%= f.datetime_select :due %>
+                    </div>
+                    <div class="field">
+                      <%= f.submit 'W00T!' %>
+                    </div>
+                <% end %>
+              </div>
           </div>
         </div>
     <% end %>
-    <div class="create_list_box">
+    <div class="list">
         <div id="show_list_form_button">New List</div>
         <%= form_for [@workspace, @newlist] do |f| %>
             <div class="field">
