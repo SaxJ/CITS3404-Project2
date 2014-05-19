@@ -14,6 +14,7 @@ class WorkspacesController < ApplicationController
   # GET /workspaces/1
   # GET /workspaces/1.json
   def show
+    @newlist = List.new
   end
 
   # GET /workspaces/new

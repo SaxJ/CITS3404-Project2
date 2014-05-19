@@ -23,5 +23,19 @@
           </div>
         </div>
     <% end %>
+    <div class="create_list_box">
+        <div id="show_list_form_button">New List</div>
+        <%= form_for [@workspace, @newlist] do |f| %>
+            <div class="field">
+              <%= f.text_field :name, placeholder: 'Name' %>
+            </div>
+            <div class="field">
+              <%= f.text_area :description, placeholder: 'Description' %>
+            </div>
+            <div class="field">
+              <%= f.submit 'Hooah!' %>
+            </div>
+        <% end %>
+    </div>
   </div>
 </div>

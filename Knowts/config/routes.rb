@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  resources :items
-
-  resources :lists
-
   resources :workspaces
 
   devise_for :users
@@ -19,6 +15,14 @@ Rails.application.routes.draw do
   get '/login' => 'accounts#sign_in'
   get '/signup' => 'accounts#register'
   get '/app' => 'workspaces#index'
+
+  resources :workspaces do
+    resources :lists
+  end
+
+  resources :lists do
+    resources :items
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

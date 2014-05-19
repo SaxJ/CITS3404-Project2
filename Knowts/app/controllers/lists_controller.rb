@@ -24,7 +24,9 @@ class ListsController < ApplicationController
   # POST /lists
   # POST /lists.json
   def create
-    @list = List.new(list_params)
+    workspace = Workspace.find_by_id params[:workspace_id]
+    @list = workspace.lists.create(list_params)
+    workspace.save
 
     respond_to do |format|
       if @list.save
