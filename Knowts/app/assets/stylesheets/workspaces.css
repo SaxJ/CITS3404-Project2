@@ -119,12 +119,12 @@ INDIVIDUAL WORKSPACE VIEW
     padding: 10px;
 }
 
-.workspace_page .route {
+.route {
     float: right;
     margin-right: 10px;
 }
 
-.workspace_page .route a {
+.route a {
     color: white;
 }
 
@@ -188,12 +188,17 @@ INDIVIDUAL WORKSPACE VIEW
     -webkit-box-shadow: inset 0 0 10px #000000;
     box-shadow: inset 0 0 10px #000000;
     background-color: #222222;
-    width: 100%;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto 10px auto;
 }
 
 .workspace_page .users .user {
-    min-width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 8px;
     display: inline-block;
     vertical-align: top;
     background-color: white;
@@ -202,8 +207,99 @@ INDIVIDUAL WORKSPACE VIEW
 
 .show_users_btn {
     text-align: center;
+    padding: 5px;
+    margin: 10px auto 0 auto;
+    width: 100px;
+    background: #e5e5e5; /* Old browsers */
+    background: -moz-linear-gradient(top,  #e5e5e5 1%, #5e5e5e 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#e5e5e5), color-stop(100%,#5e5e5e)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #e5e5e5 1%,#5e5e5e 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #e5e5e5 1%,#5e5e5e 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #e5e5e5 1%,#5e5e5e 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #e5e5e5 1%,#5e5e5e 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#5e5e5e',GradientType=0 ); /* IE6-9 */
+    color: #BF1111;
+    font-family: 'Special Elite', cursive;
+}
+
+.show_users_btn:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#add_workspace_user_button {
+    -webkit-transition: width 0.5sec ease-in;
+    -moz-transition: width 0.5sec ease-in;
+    -o-transition: width 0.5sec ease-in;
+    transition: width 0.5sec ease-in;
+}
+
+#add_workspace_user_button:hover {
+    cursor: pointer;
 }
 
 .shown {
-    display: block;
+    display: block !important;
+}
+
+.expanded {
+    width: auto !important;
+}
+
+#add_workspace_user_button .plus {
+    display: none;
+    font-size: 100px;
+    font-weight: bolder;
+    width: 100%;
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+}
+
+#add_workspace_user_button form {
+    display: none;
+}
+
+#add_workspace_user_button form div {
+    margin: 0px;
+}
+
+#add_workspace_user_button .close {
+    text-align: right;
+    display: none;
+}
+
+#add_workspace_user_button .close:hover {
+    text-decoration: underline;
+}
+
+/*
+WORKSPACE EDIT PAGE
+*/
+.edit_workspace_form {
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.edit_workspace_form h1 {
+    color: #BF1111;
+    font-family: 'Special Elite', cursive;
+}
+
+.edit_workspace_form form {
+    margin: 30px auto 30px auto;
+    width: 60%;
+    background-color: #222222;
+    box-shadow: 0 0 10px 2px #000 inset;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.edit_workspace_form form div {
+    margin: 0px;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    text-align: center;
 }

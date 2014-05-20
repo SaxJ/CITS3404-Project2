@@ -10,12 +10,15 @@
   <div class="users">
     <% @workspace.users.each do |user| %>
         <div class="user">
-          <%= user.email[0, 1] %>
+          <%= user.name %>
         </div>
     <% end %>
-    <div class="user">
+    <div class="user" id="add_workspace_user_button">
+      <div class="close">Close</div>
+      <div class="plus shown">+</div>
       <%= form_tag "#{@workspace.id}/adduser", method: 'post' do %>
-        Email: <%= text_field_tag 'email' %>
+        <div>Add by Email</div>
+        <%= text_field_tag 'email' %>
         <%= submit_tag 'Add that thang' %>
       <% end %>
     </div>

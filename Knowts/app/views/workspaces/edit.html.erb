@@ -1,6 +1,8 @@
-<h1>Editing workspace</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @workspace %> |
-<%= link_to 'Back', workspaces_path %>
+<div class="edit_workspace_form">
+    <div class="route">
+      <%= link_to 'Show', @workspace %> |
+      <%= link_to 'Back', workspaces_path %>
+    </div>
+    <h1>Editing workspace</h1>
+    <%= render 'form' %>
+</div>
