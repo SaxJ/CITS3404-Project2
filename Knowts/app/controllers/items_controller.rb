@@ -53,6 +53,29 @@ class ItemsController < ApplicationController
     end
   end
 
+  def addme
+    @workspace = Workspace.find_by_id params[:w_id]
+    item = Item.find_by_id params[:id]
+    if not item.users.include? current_user
+      item.users << current_user
+      item.save
+      redirect_to @workspace, notice: 'User added to item'
+    else
+      redirect_to @workspace
+    end
+  end
+
+  def removeme
+    @workspace = Workspace.find_by_id params[:w_id]
+    item = Item.find_by_id params[:id]
+    if item.users.length > 0
+      item.users.clear
+      redirect_to @workspace, notice: 'User removed from item'
+    else
+      redirect_to @workspace
+    end
+  end
+
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy

@@ -30,11 +30,23 @@
           <div class="list_items">
               <% list.items.each do |item| %>
                 <div class="item">
-                  <div class="item_edit"></div>
-                  <div class="item_delete"></div>
-                  <div class="item_users"></div>
-                  <div class="item_content"><%= item.content %></div>
-                  <div class="item_due">Due: <%= item.due.strftime("%d/%m/%y %H:%M") %></div>
+                  <div class="item_controls">
+                    <div class="item_edit">Edit</div>
+                    <div class="item_delete">X</div>
+                  </div>
+                  <div class="item_info">
+                    <div class="item_content"><%= item.content %></div>
+                    <div class="item_due">Due: <%= item.due.strftime("%d/%m/%y %H:%M") %></div>
+                  </div>
+                  <% if item.users.length > 0 %>
+                      <%= form_tag "/workspaces/#{@workspace.id}/lists/#{list.id}/items/#{item.id}/removeme", method: 'delete' do %>
+                          <%= submit_tag '-', class: 'item_users' %>
+                      <% end %>
+                  <% else %>
+                      <%= form_tag "/workspaces/#{@workspace.id}/lists/#{list.id}/items/#{item.id}/addme", method: 'post' do %>
+                          <%= submit_tag '+', class: 'item_users' %>
+                      <% end %>
+                  <% end %>
                 </div>
               <% end %>
               <div class="item" id="add_list_item">
