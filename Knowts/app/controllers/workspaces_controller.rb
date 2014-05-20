@@ -58,6 +58,29 @@ class WorkspacesController < ApplicationController
     end
   end
 
+  def adduser
+    @workspace = Workspace.find_by_id params[:id]
+    user = User.find_by_email params[:email]
+    win = false
+    if user
+      if not @workspace.users.include user
+        @workspace.users << user
+      end
+      @workspace.save
+      win = true
+    end
+    respond_to do |format|
+      if win
+        format.html { redirect_to @workspace, notice: 'User added!' }
+        format.json { render :show, status: :ok, location: @workspace }
+      else
+        format.html { render @workspace, notice: 'User not found!' }
+        format.json { render :show, status: :ok, location: @workspace}
+      end
+    end
+
+  end
+
   # DELETE /workspaces/1
   # DELETE /workspaces/1.json
   def destroy

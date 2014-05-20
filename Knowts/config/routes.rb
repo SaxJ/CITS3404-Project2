@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     resources :items
   end
 
+  post 'workspaces/:id/adduser' => 'workspaces#adduser'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

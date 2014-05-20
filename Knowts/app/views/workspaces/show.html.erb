@@ -6,7 +6,20 @@
   </div>
   <div class="name"><%= @workspace.name %></div>
   <div class="description"><%= @workspace.description %></div>
-  <div class="users"></div>
+  <div class="show_users_btn">Show Users</div>
+  <div class="users">
+    <% @workspace.users.each do |user| %>
+        <div class="user">
+          <%= user.email[0, 1] %>
+        </div>
+    <% end %>
+    <div class="user">
+      <%= form_tag "#{@workspace.id}/adduser", method: 'post' do %>
+        Email: <%= text_field_tag 'email' %>
+        <%= submit_tag 'Add that thang' %>
+      <% end %>
+    </div>
+  </div>
   <div class="lists">
     <% @workspace.lists.each do |list| %>
         <div class="list">
