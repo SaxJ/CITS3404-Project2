@@ -31,7 +31,9 @@
               <% list.items.each do |item| %>
                 <div class="item">
                   <div class="item_controls">
-                    <div class="item_edit">Edit</div>
+                    <%= link_to edit_list_item_url(list, item) do %>
+                        <div class="item_edit">Edit</div>
+                    <% end %>
                     <%= link_to [list, item], method: :delete do %>
                         <div class="item_delete">X</div>
                     <% end %>

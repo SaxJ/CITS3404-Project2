@@ -19,6 +19,8 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    @list = List.find_by_id params[:list_id]
+    @workspace = @list.workspace
   end
 
   # POST /items
@@ -42,13 +44,14 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
+    @workspace = @item.list.workspace
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
-        format.json { render :show, status: :ok, location: @item }
+        format.html { redirect_to @workspace, notice: 'Item was successfully updated.' }
+        format.json { render :show, status: :ok, location: @workspace }
       else
         format.html { render :edit }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+        format.json { render json: @workspace.errors, status: :unprocessable_entity }
       end
     end
   end
