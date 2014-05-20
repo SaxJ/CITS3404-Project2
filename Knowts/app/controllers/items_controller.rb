@@ -79,9 +79,11 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
+    list = List.find_by_id(params[:list_id])
+    @workspace = list.workspace
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to @workspace, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

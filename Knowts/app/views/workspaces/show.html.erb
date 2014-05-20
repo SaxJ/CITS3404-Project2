@@ -32,7 +32,9 @@
                 <div class="item">
                   <div class="item_controls">
                     <div class="item_edit">Edit</div>
-                    <div class="item_delete">X</div>
+                    <%= link_to [list, item], method: :delete do %>
+                        <div class="item_delete">X</div>
+                    <% end %>
                   </div>
                   <div class="item_info">
                     <div class="item_content"><%= item.content %></div>
