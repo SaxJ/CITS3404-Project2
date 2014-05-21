@@ -11,8 +11,10 @@
     <% @workspace.users.each do |user| %>
         <div class="user">
           <div class="user_name"><%= user.name %></div>
-          <%= link_to "/users/#{user.id}/workspaces/#{@workspace.id}/removeuser", method: :delete do %>
-            <div class="remove_user"></div>
+          <% if @workspace.owner != user.id %>
+              <%= link_to "/users/#{user.id}/workspaces/#{@workspace.id}/removeuser", method: :delete do %>
+                <div class="remove_user"></div>
+              <% end %>
           <% end %>
         </div>
     <% end %>
