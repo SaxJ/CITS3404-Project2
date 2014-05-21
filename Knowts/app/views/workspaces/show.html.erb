@@ -38,13 +38,9 @@
                         <div class="item_delete">X</div>
                     <% end %>
                     <% if item.users.length > 0 %>
-                        <%= form_tag "/workspaces/#{@workspace.id}/lists/#{list.id}/items/#{item.id}/removeme", method: 'delete' do %>
-                            <%= submit_tag '-', class: 'item_users' %>
-                        <% end %>
+                        <%= link_to "Remove Me", "/workspaces/#{@workspace.id}/lists/#{list.id}/items/#{item.id}/removeme", method: 'delete' %>
                     <% else %>
-                        <%= form_tag "/workspaces/#{@workspace.id}/lists/#{list.id}/items/#{item.id}/addme", method: 'post' do %>
-                            <%= submit_tag '+', class: 'item_users' %>
-                        <% end %>
+                        <%= link_to "Add Me", "/workspaces/#{@workspace.id}/lists/#{list.id}/items/#{item.id}/addme", method: 'post' %>
                     <% end %>
                   </div>
                   <div class="item_info">

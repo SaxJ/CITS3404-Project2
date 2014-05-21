@@ -61,22 +61,19 @@ class WorkspacesController < ApplicationController
   def adduser
     @workspace = Workspace.find_by_id params[:id]
     user = User.find_by_email params[:email]
-    win = false
+    notice = 'Not Found!'
     if user
-      if not @workspace.users.include user
+      if not @workspace.users.include? user
         @workspace.users << user
+        notice = 'User added!'
+      else
+        notice = 'Already added!'
       end
       @workspace.save
-      win = true
     end
     respond_to do |format|
-      if win
-        format.html { redirect_to @workspace, notice: 'User added!' }
-        format.json { render :show, status: :ok, location: @workspace }
-      else
-        format.html { render @workspace, notice: 'User not found!' }
-        format.json { render :show, status: :ok, location: @workspace}
-      end
+      format.html { redirect_to @workspace, notice: notice }
+      format.json { render :show, status: :ok, location: @workspace }
     end
 
   end
