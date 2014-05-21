@@ -1,0 +1,103 @@
+<div class="workspace_page">
+  <div id="notice"><%= notice %></div>
+  <div class="route">
+    <%= link_to 'Edit', edit_workspace_path(@workspace) %> |
+    <%= link_to 'Back', workspaces_path %>
+  </div>
+  <div class="name"><%= @workspace.name %></div>
+  <div class="description"><%= @workspace.description %></div>
+  <div class="show_users_btn">Show Users</div>
+  <div class="users">
+    <% @workspace.users.each do |user| %>
+        <div class="user">
+          <div class="user_name"><%= user.name %></div>
+          <% if @workspace.owner != user.id %>
+              <%= link_to "/users/#{user.id}/workspaces/#{@workspace.id}/removeuser", method: :delete do %>
+                <div class="remove_user"></div>
+              <% end %>
+          <% end %>
+        </div>
+    <% end %>
+    <div class="user" id="add_workspace_user_button">
+      <div class="close">Close</div>
+      <div class="plus shown">+</div>
+      <%= form_tag "#{@workspace.id}/adduser", method: 'post' do %>
+        <div>Add by Email</div>
+        <%= text_field_tag 'email' %>
+        <%= submit_tag 'Add that thang' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="lists">
+    <% @workspace.lists.each do |list| %>
+        <div class="list">
+          <div class="list_name"><%= list.name %></div>
+          <div class="list_items">
+              <% list.items.each do |item| %>
+                <div class="item <% if item.completed %>completed<% end %>">
+                  <div class="item_controls">
+                    <%= link_to "/workspaces/#{@workspace.id}/items/#{item.id}/toggledone", method: 'post' do %>
+                        <% if item.completed %>
+                            <div class="cross"></div>
+                        <% else %>
+                            <div class="tick"></div>
+                        <% end %>
+                    <% end %>
+                    <%= link_to edit_list_item_url(list, item) do %>
+                        <div class="item_edit" title="Edit item"></div>
+                    <% end %>
+                    <%= link_to [list, item], method: :delete do %>
+                        <div class="item_delete" title="Delete item"></div>
+                    <% end %>
+                    <% if item.users.length > 0 %>
+                        <%= link_to "/workspaces/#{@workspace.id}/lists/#{list.id}/items/#{item.id}/removeme", method: 'delete' do %>
+                            <div class="item_removeme">
+                              <div class="person_icon"></div>
+                              <div class="badge"></div>
+                            </div>
+                        <% end %>
+                    <% else %>
+                        <%= link_to "/workspaces/#{@workspace.id}/lists/#{list.id}/items/#{item.id}/addme", method: 'post' do %>
+                            <div class="item_addme"></div>
+                        <% end %>
+                    <% end %>
+                  </div>
+                  <div class="item_info">
+                    <div class="item_content"><%= item.content %></div>
+                    <div class="item_due">Due: <%= item.due.strftime("%d/%m/%y %H:%M") %></div>
+                  </div>
+                </div>
+              <% end %>
+              <div class="item" id="add_list_item">
+                <%= form_for [list, Item.new] do |f| %>
+                    <div class="field">
+                      <%= f.text_field :content, placeholder: 'Note' %>
+                    </div>
+                    <div class="field">
+                      <%= f.label :due %>
+                      <%= f.datetime_select :due %>
+                    </div>
+                    <div class="field">
+                      <%= f.submit 'W00T!' %>
+                    </div>
+                <% end %>
+              </div>
+          </div>
+        </div>
+    <% end %>
+    <div class="list">
+        <div id="show_list_form_button">New List</div>
+        <%= form_for [@workspace, @newlist] do |f| %>
+            <div class="field">
+              <%= f.text_field :name, placeholder: 'Name' %>
+            </div>
+            <div class="field">
+              <%= f.text_area :description, placeholder: 'Description' %>
+            </div>
+            <div class="field">
+              <%= f.submit 'Hooah!' %>
+            </div>
+        <% end %>
+    </div>
+  </div>
+</div>
