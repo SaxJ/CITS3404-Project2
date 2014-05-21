@@ -165,6 +165,8 @@ INDIVIDUAL WORKSPACE VIEW
     display: block;
     border-bottom: 1px solid #CCCCCC;
     padding: 8px;
+    text-align: left;
+    position: relative;
 }
 
 .list .item form > .field {
@@ -175,10 +177,31 @@ INDIVIDUAL WORKSPACE VIEW
     text-align: left;
 }
 
+.item > .item_info {
+
+}
+
+.item .item_users {
+    font-size: 50px;
+}
+
+.item > .item_controls {
+    display: block;
+    text-align: right;
+}
+
+.item .item_controls * {
+    display: inline-block;
+}
+
+.item > * {
+    display: inline-block;
+    text-align: left;
+}
+
 .item .item_due {
     color: #CCCCCC;
     font-size: 12px;
-    margin-top: 8px;
 }
 
 .users {
