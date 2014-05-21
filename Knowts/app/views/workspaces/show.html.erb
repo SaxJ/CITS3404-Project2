@@ -10,7 +10,10 @@
   <div class="users">
     <% @workspace.users.each do |user| %>
         <div class="user">
-          <%= user.name %>
+          <div class="user_name"><%= user.name %></div>
+          <%= link_to "/users/#{user.id}/workspaces/#{@workspace.id}/removeuser", method: :delete do %>
+            <div class="remove_user"></div>
+          <% end %>
         </div>
     <% end %>
     <div class="user" id="add_workspace_user_button">
@@ -29,8 +32,15 @@
           <div class="list_name"><%= list.name %></div>
           <div class="list_items">
               <% list.items.each do |item| %>
-                <div class="item">
+                <div class="item <% if item.completed %>completed<% end %>">
                   <div class="item_controls">
+                    <%= link_to "/workspaces/#{@workspace.id}/items/#{item.id}/toggledone", method: 'post' do %>
+                        <% if item.completed %>
+                            <div class="cross"></div>
+                        <% else %>
+                            <div class="tick"></div>
+                        <% end %>
+                    <% end %>
                     <%= link_to edit_list_item_url(list, item) do %>
                         <div class="item_edit" title="Edit item"></div>
                     <% end %>

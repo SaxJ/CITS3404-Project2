@@ -169,6 +169,10 @@ INDIVIDUAL WORKSPACE VIEW
     position: relative;
 }
 
+.list .completed {
+    background-color: #d6fbcc;
+}
+
 .list .item form > .field {
     margin: 0px;
     width: auto;
@@ -179,6 +183,24 @@ INDIVIDUAL WORKSPACE VIEW
 
 .item > .item_info {
 
+}
+
+.tick {
+    width: 25px;
+    height: 25px;
+    background-image: url('/images/tick_icon.svg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+}
+
+.cross {
+    width: 25px;
+    height: 25px;
+    background-image: url('/images/cross_icon.svg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
 }
 
 .item_edit {
@@ -193,7 +215,7 @@ INDIVIDUAL WORKSPACE VIEW
 .item_delete {
     width: 25px;
     height: 25px;
-    background-image: url('/images/cross_icon.svg');
+    background-image: url('/images/trash_icon.svg');
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -304,6 +326,19 @@ INDIVIDUAL WORKSPACE VIEW
     vertical-align: top;
     background-color: white;
     color: black;
+    position: relative;
+}
+
+.users .user .remove_user {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-image: url('/images/cancel_icon.png');
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    width: 25px;
+    height: 25px;
 }
 
 .show_users_btn {

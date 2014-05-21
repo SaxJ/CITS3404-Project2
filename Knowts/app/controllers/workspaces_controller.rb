@@ -78,6 +78,17 @@ class WorkspacesController < ApplicationController
 
   end
 
+  def removeuser
+    @workspace = Workspace.find_by_id params[:w_id]
+    user = User.find_by_id params[:u_id]
+    if user.id != @workspace.owner
+      @workspace.users.delete(user)
+      @workspace.save
+      redirect_to @workspace, notice: 'Deleted user!'
+    end
+    redirect_to @workspace, notice: 'Cannot delete workspace owner!'
+  end
+
   # DELETE /workspaces/1
   # DELETE /workspaces/1.json
   def destroy
