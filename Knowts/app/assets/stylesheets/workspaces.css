@@ -165,7 +165,7 @@ INDIVIDUAL WORKSPACE VIEW
     display: block;
     border-bottom: 1px solid #CCCCCC;
     padding: 8px;
-    text-align: right;
+    text-align: left;
     position: relative;
 }
 
@@ -178,9 +178,7 @@ INDIVIDUAL WORKSPACE VIEW
 }
 
 .item > .item_info {
-    position: absolute;
-    left: 0px;
-    top: 5px;
+
 }
 
 .item .item_users {
@@ -192,7 +190,7 @@ INDIVIDUAL WORKSPACE VIEW
     text-align: right;
 }
 
-.item .item_controls div {
+.item .item_controls * {
     display: inline-block;
 }
 
