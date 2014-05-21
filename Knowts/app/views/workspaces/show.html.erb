@@ -32,15 +32,22 @@
                 <div class="item">
                   <div class="item_controls">
                     <%= link_to edit_list_item_url(list, item) do %>
-                        <div class="item_edit">Edit</div>
+                        <div class="item_edit" title="Edit item"></div>
                     <% end %>
                     <%= link_to [list, item], method: :delete do %>
-                        <div class="item_delete">X</div>
+                        <div class="item_delete" title="Delete item"></div>
                     <% end %>
                     <% if item.users.length > 0 %>
-                        <%= link_to "Remove Me", "/workspaces/#{@workspace.id}/lists/#{list.id}/items/#{item.id}/removeme", method: 'delete' %>
+                        <%= link_to "/workspaces/#{@workspace.id}/lists/#{list.id}/items/#{item.id}/removeme", method: 'delete' do %>
+                            <div class="item_removeme">
+                              <div class="person_icon"></div>
+                              <div class="badge"></div>
+                            </div>
+                        <% end %>
                     <% else %>
-                        <%= link_to "Add Me", "/workspaces/#{@workspace.id}/lists/#{list.id}/items/#{item.id}/addme", method: 'post' %>
+                        <%= link_to "/workspaces/#{@workspace.id}/lists/#{list.id}/items/#{item.id}/addme", method: 'post' do %>
+                            <div class="item_addme"></div>
+                        <% end %>
                     <% end %>
                   </div>
                   <div class="item_info">
