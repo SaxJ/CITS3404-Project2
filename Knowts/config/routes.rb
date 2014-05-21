@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   post 'workspaces/:id/adduser' => 'workspaces#adduser'
   delete 'workspaces/:w_id/lists/:l_id/items/:id/removeme' => 'items#removeme'
   post 'workspaces/:w_id/lists/:l_id/items/:id/addme' => 'items#addme'
+  post 'workspaces/:w_id/items/:id/toggledone' => 'items#toggledone'
+  delete 'users/:u_id/workspaces/:w_id/removeuser' => 'workspaces#removeuser'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

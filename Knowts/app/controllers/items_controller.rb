@@ -79,6 +79,17 @@ class ItemsController < ApplicationController
     end
   end
 
+  def toggledone
+    @workspace = Workspace.find_by_id params[:w_id]
+    item = Item.find_by_id params[:id]
+
+    # this is a hack, because reuby complains about item.completed = not item.completed
+    item.completed = !item.completed
+    item.save
+
+    redirect_to @workspace
+  end
+
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
