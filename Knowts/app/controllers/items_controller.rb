@@ -83,7 +83,7 @@ class ItemsController < ApplicationController
     @workspace = Workspace.find_by_id params[:w_id]
     item = Item.find_by_id params[:id]
 
-    # this is a hack, because reuby complains about item.completed = not item.completed
+    # this is a hack, because ruby complains about item.completed = not item.completed
     item.completed = !item.completed
     item.save
 
