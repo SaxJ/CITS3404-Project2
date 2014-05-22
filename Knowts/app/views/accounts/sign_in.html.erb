@@ -14,5 +14,7 @@
       <div><%= f.submit "Sign in" %></div>
   <% end %>
   <div id="error"></div>
-  <p>Don't have an account? <a href="signup.html">Signup</a></p>
+  <p>Don't have an account?
+    <%= link_to "Signup", {:controller=>"accounts", :action=> "register"} %>
+  </p>
 </div>
