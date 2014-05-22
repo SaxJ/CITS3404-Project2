@@ -85,8 +85,9 @@ class WorkspacesController < ApplicationController
       @workspace.users.delete(user)
       @workspace.save
       redirect_to @workspace, notice: 'Deleted user!'
+    else
+      redirect_to @workspace, notice: 'Cannot delete workspace owner!'
     end
-    redirect_to @workspace, notice: 'Cannot delete workspace owner!'
   end
 
   # DELETE /workspaces/1
