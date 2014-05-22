@@ -47,18 +47,20 @@ THE WORKSPACE LISTING PAGE
     white-space: nowrap;
 }
 
-.workspace .delete {
+.workspace .delete a {
     color: #BF1111;
     display: inline-block;
     font-weight: bolder;
-    font-size: 20px;
-    width: 20px;
-    height: 20px;
+    font-size: 40px;
+   // width: 20px;
+   // height: 20px;
     line-height: 20px;
     text-align: center;
+    right: 5px;
+    position: absolute;
 }
 
-.workspace .delete:hover {
+.workspace .delete a:hover {
     background-color: red;
     color: white;
 }
