@@ -9,7 +9,7 @@
         </div>
 
         <div><%= f.label :email %><br />
-          <%= f.email_field :email %></div>
+          <%= f.email_field :email, autocomplete: "off" %></div>
 
         <div><%= f.label :password %><br />
           <%= f.password_field :password, autocomplete: "off" %></div>
@@ -17,10 +17,10 @@
         <div><%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-        <div><%= f.submit "Sign up" %></div>
+        <%= f.submit "Sign up", :class => "button"  %>
     <% end %>
   <p> Have an account?
-    <%= link_to "Login", {:controller=>"accounts", :action=> "sign_in"} %>
+    <%= link_to "Login", login_path %>
     here.
   </p>
 
