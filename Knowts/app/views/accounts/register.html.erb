@@ -1,10 +1,11 @@
 <div class="login_form">
+  <h1> Sign Up </h1>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
 
         <div>
           <%= f.label :name %><br />
-          <%= f.text_field :name, autofocus: true %>
+          <%= f.text_field :name, autofocus: "on" %>
         </div>
 
         <div><%= f.label :email %><br />
@@ -18,4 +19,9 @@
 
         <div><%= f.submit "Sign up" %></div>
     <% end %>
+  <p> Have an account?
+    <%= link_to "Login", {:controller=>"accounts", :action=> "sign_in"} %>
+    here.
+  </p>
+
 </div>

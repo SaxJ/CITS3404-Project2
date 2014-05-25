@@ -15,28 +15,16 @@
 <div class="alert"><%= alert %></div>
 <div class="header">
   <div class="left">
-    <a href="/index.html">
-      <div>Knowts</div>
-    </a>
+    <%= link_to "Knowts", root_path %>
   </div>
   <div class="right">
-    <a href="/index.html">
-      <div>Home</div>
-    </a>
-    <a href="/about.html">
-      <div>About</div>
-    </a>
+    <div> <%= link_to "Home", root_path %> </div>
+    <div> <%= link_to "About", about_path %> </div>
     <% if not user_signed_in? %>
-        <a href="/login.html">
-          <div>Login</div>
-        </a>
-        <a href="/signup.html">
-          <div>Signup</div>
-        </a>
+        <div> <%= link_to "Login", login_path %> </div>
+        <div> <%= link_to "Signup", signup_path %> </div>
     <% else %>
-        <a href="/workspaces">
-          <div>Workspaces</div>
-        </a>
+        <div><%= link_to "Workspaces", workspaces_path %> </div>
         <%= form_tag('/users/sign_out', method: 'delete', id: 'signout_form') do %>
             <div id="sign_out_button">Logout</div>
         <% end %>
@@ -45,10 +33,12 @@
 </div>
 <div class="content">
 
-<%= yield %>
+  <%= yield %>
 
   <footer class="footer">
-    <span><a href="/sitemap.html">Sitemap</a></span>
+    <span>
+      <%= link_to "Sitemap", sitemap_path %>
+    </span>
     <span>Website designed &amp; developed by Saxon Jensen.</span>
     <span><a href="http://validator.w3.org/check/referer">Valid HTML 5</a></span>
     <p>
