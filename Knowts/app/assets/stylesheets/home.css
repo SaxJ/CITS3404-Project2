@@ -46,7 +46,11 @@ HEADER
     line-height: 70px;
     padding: 0 20px 0 20px;
     font-weight: bolder;
-    background-color: #F0E9E9;
+    background-color: #f8f6fc;
+}
+
+.header .left a {
+    color: #4b238a;
 }
 
 .header .right {
@@ -62,10 +66,11 @@ HEADER
     transition: all 1s;
     height: 100%;
     display: inline-block;
+    font-weight: bold;
 }
 
-.header .right div:hover {
-    color: #BF1111;
+.header .right div a:hover {
+    color: #9683e0;
     cursor: pointer;
 }
 
@@ -101,7 +106,7 @@ CONTENT
 
 .pane_header > em {
     font-family: 'Special Elite', cursive;
-    color: #BF1111;
+    color: #a783e0;
 }
 
 .pane_image {
@@ -144,7 +149,7 @@ CONTENT
 }
 
 .features_pane .col h1 {
-    color: #BF1111;
+    color: #a783e0;
 }
 
 .signup_pane {
@@ -156,7 +161,7 @@ CONTENT
 }
 
 button {
-    background-color: #BF1111;
+    background-color: #a783e0;
     color: #FFF;
     font-family: 'Special Elite', cursive;
     border: none;
@@ -168,15 +173,16 @@ button {
 }
 
 button:hover {
-    background-color: #CC4141;
+    background-color: #dccdf2;
     font-family: 'Special Elite', cursive;
-    box-shadow: 0 0  100px 1px #BF1111;
+    box-shadow: 0 0  50px 1px #a783e0;
     cursor: pointer;
+    color: #4b238a;
 }
 
 
 .button {
-    background-color: #BF1111;
+    background-color: #a783e0;
     color: #FFF;
     font-family: 'Special Elite', cursive;
     border: none;
@@ -190,10 +196,11 @@ button:hover {
 }
 
 .button:hover {
-    background-color: #CC4141;
+    background-color: #dccdf2;
     font-family: 'Special Elite', cursive;
-    box-shadow: 0 0  100px 1px #BF1111;
+    box-shadow: 0 0  50px 1px #a783e0;
     cursor: pointer;
+    color: #4b238a;
 }
 
 form .button {
@@ -204,20 +211,21 @@ form .button {
 FOOTER
 /////////////////
 */
-.footer {
+footer {
     text-align: center;
     color: #333;
     font-size: 20px;
     width: 100%;
     background-color: #FFF;
     padding-bottom: 10px;
+    bottom: 0px;
 }
 
-.footer a {
+footer a {
     color: #333;
     text-decoration: underline;
 }
 
-.footer span {
+footer span {
     margin: 0 30px 0 30px;
 }

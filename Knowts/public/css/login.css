@@ -24,11 +24,19 @@ form > div {
 	margin: 20px auto 20px auto;
 }
 
-.login_form a, .login_form a:hover {
-	color: #BF1111;
+.login_form a {
+    color: #9683e0;
+}
+.login_form a:hover {
+	color: #6144d0;
 }
 
 .login_form h1 {
-	color: #BF1111;
+	color: #a783e0;
+    font-size: 40px;
 	font-family: 'Special Elite', cursive;
+}
+
+label {
+    font-size: 22px;
 }
