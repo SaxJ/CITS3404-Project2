@@ -9,7 +9,9 @@
 }
 
 .tree_container h1 {
-	color: #BF1111;
+	color: #a783e0;
+    font-weight: bold;
+    font-size: 3em;
 }
 
 .tree_container table {
