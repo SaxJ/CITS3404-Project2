@@ -1,6 +1,5 @@
-<h1>Accounts#sign_out</h1>
-<p>Find me in app/views/accounts/sign_out.html.erb</p>
-<%= form_tag('/users/sign_out', method: 'delete') do %>
-    <div><%= submit_tag 'Submit' %></div>
+<h1> Log out </h1>
+<%= form_tag(method: 'delete', id: 'signout_form') do %>
+<p name="notice"> You have successfully log out. </p>
 <% end %>
 

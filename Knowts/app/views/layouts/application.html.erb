@@ -15,16 +15,16 @@
 <div class="alert"><%= alert %></div>
 <div class="header">
   <div class="left">
-    <%= link_to "Knowts", {controller:"home"}, action: "index" %>
+    <%= link_to "Knowts", root_path %>
   </div>
   <div class="right">
-    <div> <%= link_to "Home", {:controller=>"home", :action=> "index"} %> </div>
-    <div> <%= link_to "About", {:controller=>"home", :action=> "about"} %> </div>
+    <div> <%= link_to "Home", root_path %> </div>
+    <div> <%= link_to "About", about_path %> </div>
     <% if not user_signed_in? %>
-        <div> <%= link_to "Login", { :controller=>"accounts", :action=> "sign_in"} %> </div>
-        <div> <%= link_to "Signup", { :controller=>"accounts", :action=> "register"} %> </div>
+        <div> <%= link_to "Login", login_path %> </div>
+        <div> <%= link_to "Signup", signup_path %> </div>
     <% else %>
-        <div><%= link_to "Workspaces", {controller:"workspaces"} %> </div>
+        <div><%= link_to "Workspaces", workspaces_path %> </div>
         <%= form_tag('/users/sign_out', method: 'delete', id: 'signout_form') do %>
             <div id="sign_out_button">Logout</div>
         <% end %>
@@ -37,7 +37,7 @@
 
   <footer class="footer">
     <span>
-      <%= link_to "Sitemap", {:controller=> "home", :action => "sitemap"} %>
+      <%= link_to "Sitemap", sitemap_path %>
     </span>
     <span>Website designed &amp; developed by Saxon Jensen.</span>
     <span><a href="http://validator.w3.org/check/referer">Valid HTML 5</a></span>
