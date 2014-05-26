@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/sitemap' => 'home#sitemap'
   get '/login' => 'accounts#sign_in'
   get '/signup' => 'accounts#register'
+  get '/logout' => 'accounts#sign_out'
   get '/app' => 'workspaces#index'
 
   resources :workspaces do
@@ -29,7 +30,7 @@ Rails.application.routes.draw do
   post 'workspaces/:w_id/lists/:l_id/items/:id/addme' => 'items#addme'
   post 'workspaces/:w_id/items/:id/toggledone' => 'items#toggledone'
   delete 'users/:u_id/workspaces/:w_id/removeuser' => 'workspaces#removeuser'
-
+  delete 'workspaces/:w_id/:u_id/removeworkspace' => 'workspaces#removeworkspace'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

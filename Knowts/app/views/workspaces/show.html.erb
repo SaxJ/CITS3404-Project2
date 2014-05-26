@@ -1,11 +1,11 @@
 <div class="workspace_page">
-  <div id="notice"><%= notice %></div>
   <div class="route">
     <%= link_to 'Edit', edit_workspace_path(@workspace) %> |
     <%= link_to 'Back', workspaces_path %>
   </div>
   <div class="name"><%= @workspace.name %></div>
   <div class="description"><%= @workspace.description %></div>
+  <div id="notice"><%= notice %></div>
   <div class="show_users_btn">Show Users</div>
   <div class="users">
     <% @workspace.users.each do |user| %>
@@ -24,7 +24,7 @@
       <%= form_tag "#{@workspace.id}/adduser", method: 'post' do %>
         <div>Add by Email</div>
         <%= text_field_tag 'email' %>
-        <%= submit_tag 'Add that thang' %>
+        <%= submit_tag 'Add that thang', :class =>"list-button" %>
       <% end %>
     </div>
   </div>
@@ -78,7 +78,7 @@
                       <%= f.datetime_select :due %>
                     </div>
                     <div class="field">
-                      <%= f.submit 'W00T!' %>
+                      <%= f.submit 'W00T!', :class => "list-button" %>
                     </div>
                 <% end %>
               </div>
@@ -95,7 +95,7 @@
               <%= f.text_area :description, placeholder: 'Description' %>
             </div>
             <div class="field">
-              <%= f.submit 'Hooah!' %>
+              <%= f.submit 'Hooah!', :class=>"list-button" %>
             </div>
         <% end %>
     </div>

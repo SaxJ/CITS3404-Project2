@@ -2,8 +2,9 @@
   <h1>Here are your workspaces, <em><%= current_user.name %></em></h1>
   <% @workspaces.each do |workspace| %>
     <div class="workspace">
-      <%= link_to workspace, method: :delete do %>
-          <div class="delete">X</div>
+    <div class="delete">
+      <%= link_to "/workspaces/#{workspace.id}/#{current_user.id}/removeworkspace", method: :delete do %> &times;
+    </div>
       <% end %>
       <%= link_to workspace do %>
           <div class="name"><%= workspace.name %></div>

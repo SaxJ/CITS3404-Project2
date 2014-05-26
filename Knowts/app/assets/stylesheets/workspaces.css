@@ -1,12 +1,16 @@
 /*
 THE WORKSPACE LISTING PAGE
 */
+.workspace_list, .lists {
+    min-height: 96%;
+}
+
 .workspace_list > h1 {
     color: white;
 }
 
 .workspace_list > h1 em {
-    color: #BF1111;
+    color: #a783e0;
     font-style: normal;
 }
 
@@ -15,8 +19,8 @@ THE WORKSPACE LISTING PAGE
     padding: 5px;
     margin: 8px;
     display: inline-block;
-    width: 110px;
-    min-height: 100px;
+    width: 200px;
+    min-height: 200px;
     overflow: hidden;
     max-height: 150px;
     vertical-align: top;
@@ -36,10 +40,12 @@ THE WORKSPACE LISTING PAGE
 .workspace div {
     margin: 5px 0 5px 0;
     overflow: hidden;
+    font-size: 1.25em;
 }
 
 .workspace .name {
-    color: #BF1111;
+    font-size: 2em;
+    color: #a783e0;
     margin-bottom: 10px;
     border-bottom: 1px #CCC solid;
     text-overflow: ellipsis;
@@ -47,19 +53,21 @@ THE WORKSPACE LISTING PAGE
     white-space: nowrap;
 }
 
-.workspace .delete {
+.workspace .delete a {
     color: #BF1111;
     display: inline-block;
     font-weight: bolder;
-    font-size: 20px;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
+    font-size: 50px;
+   // width: 20px;
+   // height: 20px;
+    line-height: 25px;
     text-align: center;
+    right: 5px;
+    position: absolute;
 }
 
-.workspace .delete:hover {
-    background-color: red;
+.workspace .delete a:hover {
+    background-color: #BF1111;
     color: white;
 }
 
@@ -69,9 +77,9 @@ THE WORKSPACE LISTING PAGE
     right: 0px;
     top: 0px;
     bottom: 0px;
-    font-size: 120px;
+    font-size: 200px;
     text-align: center !important;
-    line-height: 120px;
+    line-height: 200px;
 }
 
 /*
@@ -92,10 +100,10 @@ NEW WORKSPACE PAGE
     color: white;
 }
 
-.create_workspace_form #error_explanation {
+.error_explanation {
     padding: 10px;
     border: 2px solid #000000;
-    background-color: #BF1111;
+    background-color: #a783e0;
     color: white;
     -webkit-box-shadow: inset 0px 0px 36px 5px rgba(0,0,0,0.75);
     -moz-box-shadow: inset 0px 0px 36px 5px rgba(0,0,0,0.75);
@@ -103,6 +111,9 @@ NEW WORKSPACE PAGE
     text-align: left;
 }
 
+.error_explanation li {
+    list-style-type: none;
+}
 .create_workspace_form .field {
 
 }
@@ -116,12 +127,15 @@ INDIVIDUAL WORKSPACE VIEW
 */
 .workspace_page {
     color: white;
-    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    min-height: 95%;
 }
 
 .route {
     float: right;
     margin-right: 10px;
+    font-size: 20px;
 }
 
 .route a {
@@ -129,10 +143,11 @@ INDIVIDUAL WORKSPACE VIEW
 }
 
 .workspace_page .name {
-    color: #BF1111;
+    color: #f8f6fc;
     font-weight: bold;
     margin-bottom: 10px;
-    font-size: 26px;
+    font-size: 35px;
+    padding: 10px;
 }
 
 .list {
@@ -140,10 +155,10 @@ INDIVIDUAL WORKSPACE VIEW
     padding: 5px;
     display: inline-block;
     vertical-align: top;
-    background-color: white;
+    background-color: #f8f6fc;
     width: 265px;
     min-height: 200px;
-    margin: 10px;
+    margin: 25px;
 }
 
 .list > form .field {
@@ -324,7 +339,7 @@ INDIVIDUAL WORKSPACE VIEW
     padding: 8px;
     display: inline-block;
     vertical-align: top;
-    background-color: white;
+    background-color: #f8f6fc;
     color: black;
     position: relative;
 }
@@ -343,18 +358,20 @@ INDIVIDUAL WORKSPACE VIEW
 
 .show_users_btn {
     text-align: center;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 18px;
     margin: 10px auto 0 auto;
     width: 100px;
-    background: #e5e5e5; /* Old browsers */
-    background: -moz-linear-gradient(top,  #e5e5e5 1%, #5e5e5e 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#e5e5e5), color-stop(100%,#5e5e5e)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #e5e5e5 1%,#5e5e5e 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #e5e5e5 1%,#5e5e5e 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #e5e5e5 1%,#5e5e5e 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #e5e5e5 1%,#5e5e5e 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#5e5e5e',GradientType=0 ); /* IE6-9 */
-    color: #BF1111;
+    background: #f8f6fc; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f8f6fc 1%, #aea3e0 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#f8f6fc), color-stop(100%,#aea3e0)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f8f6fc 1%,#aea3e0 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f8f6fc 1%,#aea3e0 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f8f6fc 1%,#aea3e0 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f8f6fc 1%,#aea3e0 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f6fc', endColorstr='#aea3e0',GradientType=0 ); /* IE6-9 */
+    color: #972ae0;
     font-family: 'Special Elite', cursive;
 }
 
@@ -419,7 +436,7 @@ WORKSPACE EDIT PAGE
 }
 
 .edit_workspace_form h1 {
-    color: #BF1111;
+    color: #a783e0;
     font-family: 'Special Elite', cursive;
 }
 
@@ -438,4 +455,23 @@ WORKSPACE EDIT PAGE
     height: auto;
     line-height: normal;
     text-align: center;
+}
+
+.list-button {
+    font-size: 10px;
+    background-color: #af8ee3;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    color: white;
+}
+
+#notice {
+    font-size: 20px;
+}
+
+.create_workspace_form, .edit_workspace_form {
+    min-height: 96%;
+
 }

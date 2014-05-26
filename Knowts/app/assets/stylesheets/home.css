@@ -3,9 +3,17 @@
 GLOBAL
 /////////////////
 */
-
+* {
+    margin: 0px;
+}
 body {
     font-family: 'Poiret One', cursive;
+  //  background-color: #f8f6fc;
+    height: 100%;
+}
+
+html {
+    background-color: #333;
 }
 
 a, a:hover, a:active {
@@ -46,7 +54,11 @@ HEADER
     line-height: 70px;
     padding: 0 20px 0 20px;
     font-weight: bolder;
-    background-color: #F0E9E9;
+    background-color: #f8f6fc;
+}
+
+.header .left a {
+    color: #4b238a;
 }
 
 .header .right {
@@ -62,10 +74,11 @@ HEADER
     transition: all 1s;
     height: 100%;
     display: inline-block;
+    font-weight: bold;
 }
 
-.header .right div:hover {
-    color: #BF1111;
+.header .right div a:hover {
+    color: #9683e0;
     cursor: pointer;
 }
 
@@ -80,6 +93,8 @@ CONTENT
     top: 70px;
     left: 0px;
     right: 0px;
+    min-height: 90%;
+    height: 90%;
 }
 
 .content .first_pane {
@@ -101,7 +116,7 @@ CONTENT
 
 .pane_header > em {
     font-family: 'Special Elite', cursive;
-    color: #BF1111;
+    color: #a783e0;
 }
 
 .pane_image {
@@ -144,7 +159,7 @@ CONTENT
 }
 
 .features_pane .col h1 {
-    color: #BF1111;
+    color: #a783e0;
 }
 
 .signup_pane {
@@ -153,10 +168,11 @@ CONTENT
     font-size: 40px;
     text-align: center;
     padding: 30px;
+    background-color: #333;
 }
 
 button {
-    background-color: #BF1111;
+    background-color: #a783e0;
     color: #FFF;
     font-family: 'Special Elite', cursive;
     border: none;
@@ -168,14 +184,16 @@ button {
 }
 
 button:hover {
-    background-color: #CC4141;
+    background-color: #dccdf2;
     font-family: 'Special Elite', cursive;
-    box-shadow: 0 0  100px 1px #BF1111;
+    box-shadow: 0 0  50px 1px #a783e0;
     cursor: pointer;
+    color: #4b238a;
 }
 
+
 .button {
-    background-color: #BF1111;
+    background-color: #a783e0;
     color: #FFF;
     font-family: 'Special Elite', cursive;
     border: none;
@@ -184,37 +202,42 @@ button:hover {
     margin: 20px auto 20px auto;
     padding: 10px 30px 10px 30px;
     width: 30%;
-    margin: 20px auto 20px auto;
     transition: all 0.5s;
 }
 
 .button:hover {
-    background-color: #CC4141;
+    background-color: #dccdf2;
     font-family: 'Special Elite', cursive;
-    box-shadow: 0 0  100px 1px #BF1111;
+    box-shadow: 0 0  50px 1px #a783e0;
     cursor: pointer;
+    color: #4b238a;
 }
 
+form .button {
+    font-size: 28px;
+}
 /*
 /////////////////
 FOOTER
 /////////////////
 */
-.footer {
+footer {
     text-align: center;
-    color: #333;
+    background-color: #333;
     font-size: 20px;
     width: 100%;
-    background-color: #FFF;
-    height: 30px;
-    line-height: 30px;
+    color: #FFF;
+    padding-bottom: 10px;
+    bottom: 0px;
+    border-top-style: solid;
+    border-top-color: white;
 }
 
-.footer a {
-    color: #333;
+footer a, footer a:hover {
+    color: #fff;
     text-decoration: underline;
 }
 
-.footer span {
+footer span {
     margin: 0 30px 0 30px;
 }
