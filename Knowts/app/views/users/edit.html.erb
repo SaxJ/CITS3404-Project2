@@ -1,6 +1,5 @@
-<h1>Editing user</h1>
+<h1 class="users-h1">Editing user <span id="user-name"><%= current_user.name %></span></h1>
+<span class="users-link"><%= link_to 'Show', @user %> |
+  <%= link_to 'Back', users_path %> </span>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
