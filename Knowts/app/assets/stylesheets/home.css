@@ -3,9 +3,17 @@
 GLOBAL
 /////////////////
 */
-
+* {
+    margin: 0px;
+}
 body {
     font-family: 'Poiret One', cursive;
+  //  background-color: #f8f6fc;
+    height: 100%;
+}
+
+html {
+    background-color: #333;
 }
 
 a, a:hover, a:active {
@@ -85,6 +93,8 @@ CONTENT
     top: 70px;
     left: 0px;
     right: 0px;
+    min-height: 90%;
+    height: 90%;
 }
 
 .content .first_pane {
@@ -158,6 +168,7 @@ CONTENT
     font-size: 40px;
     text-align: center;
     padding: 30px;
+    background-color: #333;
 }
 
 button {
@@ -212,16 +223,18 @@ FOOTER
 */
 footer {
     text-align: center;
-    color: #333;
+    background-color: #333;
     font-size: 20px;
     width: 100%;
-    background-color: #FFF;
+    color: #FFF;
     padding-bottom: 10px;
     bottom: 0px;
+    border-top-style: solid;
+    border-top-color: white;
 }
 
-footer a {
-    color: #333;
+footer a, footer a:hover {
+    color: #fff;
     text-decoration: underline;
 }
 

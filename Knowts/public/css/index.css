@@ -3,15 +3,31 @@
 GLOBAL
 /////////////////
 */
-
+* {
+    margin: 0px;
+}
 body {
     font-family: 'Poiret One', cursive;
+//  background-color: #f8f6fc;
+    height: 100%;
+}
+
+html {
+    background-color: #333;
 }
 
 a, a:hover, a:active {
     color: black;
     text-decoration: none;
     border: none;
+}
+
+#signout_form {
+    display: inline;
+}
+
+#sign_out_button {
+    display: inline;
 }
 
 /*
@@ -58,6 +74,7 @@ HEADER
     transition: all 1s;
     height: 100%;
     display: inline-block;
+    font-weight: bold;
 }
 
 .header .right div a:hover {
@@ -76,6 +93,8 @@ CONTENT
     top: 70px;
     left: 0px;
     right: 0px;
+    min-height: 90%;
+    height: 90%;
 }
 
 .content .first_pane {
@@ -149,6 +168,7 @@ CONTENT
     font-size: 40px;
     text-align: center;
     padding: 30px;
+    background-color: #333;
 }
 
 button {
@@ -166,10 +186,11 @@ button {
 button:hover {
     background-color: #dccdf2;
     font-family: 'Special Elite', cursive;
-    box-shadow: 0 0  100px 1px #a783e0;
+    box-shadow: 0 0  50px 1px #a783e0;
     cursor: pointer;
     color: #4b238a;
 }
+
 
 .button {
     background-color: #a783e0;
@@ -181,7 +202,6 @@ button:hover {
     margin: 20px auto 20px auto;
     padding: 10px 30px 10px 30px;
     width: 30%;
-    margin: 20px auto 20px auto;
     transition: all 0.5s;
 }
 
@@ -196,26 +216,25 @@ button:hover {
 form .button {
     font-size: 28px;
 }
-
 /*
 /////////////////
 FOOTER
 /////////////////
 */
 footer {
-    bottom: 0px;
-    position: absolute;
     text-align: center;
-    color: #333;
+    background-color: #333;
     font-size: 20px;
     width: 100%;
-    background-color: #FFF;
-    height: 30px;
-    line-height: 30px;
+    color: #FFF;
+    padding-bottom: 10px;
+    bottom: 0px;
+    border-top-style: solid;
+    border-top-color: white;
 }
 
-footer a {
-    color: #333;
+footer a, footer a:hover {
+    color: #fff;
     text-decoration: underline;
 }
 

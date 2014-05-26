@@ -1,5 +1,7 @@
 .content .sitemap {
 	bottom: 0px;
+    min-height: 96%;
+
 }
 
 .tree_container {
@@ -18,7 +20,8 @@
 	width: 450px;
 	height: 450px;
 	margin: 0 auto 0 auto;
-	-webkit-animation: rotationcw 120s infinite linear;
+    margin-top: 80px;
+    -webkit-animation: rotationcw 120s infinite linear;
 	-moz-animation: rotationcw 120s infinite linear;
 	-o-animation: rotationcw 120s infinite linear;
 }
@@ -37,7 +40,7 @@ td {
 
 td.globe {
 	color: black;
-	background-color: white;
+	background-color: #f8f6fc;
 	transition: all 0.4s;
 }
 

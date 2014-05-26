@@ -2,3 +2,30 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.users-h1,
+.users-table th{
+    color: #ffffff;
+}
+
+.users-table a, .users-table a:hover, .users-table {
+    color: black;
+}
+.users-h1 #user-name {
+    color: #a783e0;
+    font-weight: bold;
+}
+
+.users-table th{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.users-table-div {
+    min-height: 92%;
+}
+
+.users-table td{
+    background-color: #f8f6fc;
+    border-radius: 0;
+}

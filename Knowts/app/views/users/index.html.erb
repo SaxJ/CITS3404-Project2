@@ -1,7 +1,7 @@
-<h1>Listing users <%= current_user.name %></h1>
-
-<table>
-  <thead>
+<h1 class="users-h1">Listing users associated with <span id="user-name"><%= current_user.name %> </span></h1>
+<div class="users-table-div">
+<table class="users-table">
+  <thead style="font-weight: bold;">
     <tr>
       <th>Name</th>
       <th colspan="3"></th>
@@ -19,7 +19,6 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
-
-<%= link_to 'New User', new_user_path %>
+<!--div class="users-link"> <%= link_to 'New User', new_user_path %> </div-->

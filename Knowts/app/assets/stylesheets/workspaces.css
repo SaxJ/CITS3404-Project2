@@ -1,6 +1,10 @@
 /*
 THE WORKSPACE LISTING PAGE
 */
+.workspace_list, .lists {
+    min-height: 96%;
+}
+
 .workspace_list > h1 {
     color: white;
 }
@@ -96,7 +100,7 @@ NEW WORKSPACE PAGE
     color: white;
 }
 
-.create_workspace_form #error_explanation {
+.error_explanation {
     padding: 10px;
     border: 2px solid #000000;
     background-color: #a783e0;
@@ -107,6 +111,9 @@ NEW WORKSPACE PAGE
     text-align: left;
 }
 
+.error_explanation li {
+    list-style-type: none;
+}
 .create_workspace_form .field {
 
 }
@@ -120,7 +127,9 @@ INDIVIDUAL WORKSPACE VIEW
 */
 .workspace_page {
     color: white;
-    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    min-height: 95%;
 }
 
 .route {
@@ -138,6 +147,7 @@ INDIVIDUAL WORKSPACE VIEW
     font-weight: bold;
     margin-bottom: 10px;
     font-size: 35px;
+    padding: 10px;
 }
 
 .list {
@@ -148,7 +158,7 @@ INDIVIDUAL WORKSPACE VIEW
     background-color: #f8f6fc;
     width: 265px;
     min-height: 200px;
-    margin: 10px;
+    margin: 25px;
 }
 
 .list > form .field {
@@ -459,4 +469,9 @@ WORKSPACE EDIT PAGE
 
 #notice {
     font-size: 20px;
+}
+
+.create_workspace_form, .edit_workspace_form {
+    min-height: 96%;
+
 }
