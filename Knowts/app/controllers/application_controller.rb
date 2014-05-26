@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :name, :email, :password, :remember_me) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :password_confirmation, :current_password) }
   end
+
+  def after_sign_in_path_for(resource)
+    return '/app'
+  end
 end
