@@ -108,7 +108,7 @@ NEW WORKSPACE PAGE
     -webkit-box-shadow: inset 0px 0px 36px 5px rgba(0,0,0,0.75);
     -moz-box-shadow: inset 0px 0px 36px 5px rgba(0,0,0,0.75);
     box-shadow: inset 0px 0px 36px 5px rgba(0,0,0,0.75);
-    text-align: left;
+    text-align: center;
 }
 
 .error_explanation li {
