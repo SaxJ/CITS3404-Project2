@@ -72,8 +72,9 @@ class ItemsController < ApplicationController
   def removeme
     @workspace = Workspace.find_by_id params[:w_id]
     item = Item.find_by_id params[:id]
-    if item.users.length > 0
-      item.users.clear
+    if item.users.include? current_user
+  #    item.users.clear
+      item.users.delete(current_user)
       redirect_to @workspace, notice: 'User removed from item'
     else
       redirect_to @workspace

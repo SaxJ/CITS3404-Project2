@@ -48,7 +48,7 @@
                     <%= link_to [list, item], method: :delete do %>
                         <div class="item_delete" title="Delete item"></div>
                     <% end %>
-                    <% if item.users.length > 0 %>
+                    <% if item.users.length > 0 and item.users.include? current_user %>
                         <%= link_to "/workspaces/#{@workspace.id}/lists/#{list.id}/items/#{item.id}/removeme", method: 'delete' do %>
                             <div class="item_removeme">
                               <div class="person_icon"></div>
@@ -63,6 +63,15 @@
                   </div>
                   <div class="item_info">
                     <div class="item_content"><%= item.content %></div>
+                    <span class="assignee">
+                    <% if item.users.length > 0 %>
+                        Assigned to:<br/>
+                        <% item.users.each do |user| %>
+                            <span class="assigned-user_name"><%= user.name %>
+                            </span><br/>
+                        <% end %>
+                    <% end%>
+                    </span>
                     <div class="item_due">Due: <%= item.due.strftime("%d/%m/%y %H:%M") %></div>
                   </div>
                 </div>

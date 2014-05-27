@@ -171,9 +171,12 @@ INDIVIDUAL WORKSPACE VIEW
 .list > .list_name {
     text-align: center;
     font-weight: bold;
-    text-decoration: underline;
+    color: #a783e0;
+ //   text-decoration: underline;
     border-bottom: 1px solid #CCCCCC;
     padding-bottom: 5px;
+    font-size: 27px;
+
 }
 
 .list .item {
@@ -474,4 +477,12 @@ WORKSPACE EDIT PAGE
 .create_workspace_form, .edit_workspace_form {
     min-height: 96%;
 
+}
+
+.assignee {
+    font-size: 13px;
+}
+
+.item_content {
+    text-decoration: underline;
 }
