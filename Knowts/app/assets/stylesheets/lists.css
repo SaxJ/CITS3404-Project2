@@ -2,3 +2,16 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+.new_list {
+    min-height: 85%;
+}
+
+.list-form {
+    text-align: center;
+    color: #ffffff;
+}
+
+.error_explanation {
+    display: block;
+    height: auto;
+}
