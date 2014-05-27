@@ -30,6 +30,11 @@ a, a:hover, a:active {
     display: inline;
 }
 
+#sign_out_button:hover {
+    cursor: pointer;
+    color: #a783e0;
+}
+
 /*
 /////////////////
 HEADER
