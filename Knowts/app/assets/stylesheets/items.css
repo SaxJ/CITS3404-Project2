@@ -2,3 +2,16 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+.item-form {
+    min-height: 91%;
+}
+
+.item-form-content {
+    color: #ffffff;
+    text-align: center;
+}
+
+.item-form h1 {
+    color: #a783e0;
+    text-align: center;
+}
