@@ -2,3 +2,31 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+.logout-page h1{
+    color: #a783e0;
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.logout-notice, .logout-links {
+    text-align: center;
+    color:white;
+}
+
+.logout-links a, .logout-links a:hover {
+    color: #aea3e0;
+    text-decoration: underline;
+}
+
+.logout-notice {
+    font-size: 25px;
+}
+
+.logout-links {
+    font-size: 20px;
+}
+
+.logout-page {
+    min-height: 90%;
+}

@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     return '/app'
   end
+
+  def after_sign_out_path_for(resource)
+    return '/logout'
+  end
 end
