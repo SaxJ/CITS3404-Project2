@@ -16,6 +16,9 @@ class AccountsController < ApplicationController
   end
 
   def register
+    if user_signed_in?
+      redirect_to loggedin_path
+    end
   end
 
 
