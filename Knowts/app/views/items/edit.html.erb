@@ -4,5 +4,29 @@
   </div>
   <h1>Editing item</h1>
 
-  <%= render 'form' %>
+  <%= form_for [@list, @item], url: list_item_path do |f| %>
+      <% if @item.errors.any? %>
+          <div class="error_explanation">
+            <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+            <ul>
+              <% @item.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :content %><br>
+        <%= f.text_field :content %>
+      </div>
+      <div class="field">
+        <%= f.label :due %><br>
+        <%= f.datetime_select :due %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Edit", :class => "button" %>
+      </div>
+  <% end %>
+
 </div>
