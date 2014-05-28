@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/about' => 'home#about'
   get '/sitemap' => 'home#sitemap'
   get '/login' => 'accounts#sign_in'
+  get '/loggedin' => 'accounts#signed_in'
   get '/signup' => 'accounts#register'
   get '/logout' => 'accounts#sign_out'
   get '/app' => 'workspaces#index'

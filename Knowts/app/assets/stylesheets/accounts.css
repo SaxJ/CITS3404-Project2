@@ -2,31 +2,39 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
-.logout-page h1{
+.logout-page h1,
+.signed_in-page h1 {
     color: #a783e0;
     font-size: 3em;
     text-align: center;
     font-weight: bold;
 }
 
-.logout-notice, .logout-links {
+.logout-notice, .logout-links,
+.signed_in-notice, .signed_in-links {
     text-align: center;
     color:white;
 }
 
-.logout-links a, .logout-links a:hover {
+.logout-links a, .logout-links a:hover,
+.signed_in-links a, .signed_in-links a:hover {
     color: #aea3e0;
     text-decoration: underline;
 }
 
-.logout-notice {
+.logout-notice, .signed_in-notice {
     font-size: 25px;
 }
 
-.logout-links {
+.logout-links, .signed_in-links{
     font-size: 20px;
 }
 
-.logout-page {
+.logout-page, .signed_in-page {
     min-height: 90%;
 }
+
+.signed_in-user {
+    color: #a783e0;
+}
+
