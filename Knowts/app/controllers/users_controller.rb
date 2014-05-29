@@ -14,12 +14,14 @@ class UsersController < ApplicationController
   end
 
   # GET /users/new
+  # shouldn't be able to access this method if not logged in
+  # shouldn't create a new user while logged in
   def new
     if user_signed_in?
       redirect_to loggedin_path
       return
     end
-    @user = User.new
+   # @user = User.new
   end
 
   # GET /users/1/edit
