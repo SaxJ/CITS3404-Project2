@@ -115,8 +115,22 @@ NEW WORKSPACE PAGE
 .error_explanation li {
     list-style-type: none;
 }
-.create_workspace_form .field {
+.create_workspace_form h1 {
+    color: #a783e0;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
 
+.workspace-links {
+    text-align: left;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.workspace-links a, .workspace-links a:hover {
+    color:#ffffff;
+    text-decoration: underline;
 }
 
 .create_workspace_form .field div {
