@@ -13,6 +13,12 @@ class UsersControllerTest < ActionController::TestCase
     assert_not_nil assigns(:users)
   end
 
+  test "shouldn't get new" do
+    get :new
+    assert_redirected_to new_user_session_path
+  end
+
+
   test "shouldn't get new while signed in" do
     sign_in @user
     get :new
