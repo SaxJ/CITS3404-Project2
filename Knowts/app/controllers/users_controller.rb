@@ -42,6 +42,10 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
+      if not @user.id.equal?(current_user.id)
+        redirect_to @user, alert: "You don't have the permission to edit the user."
+        return
+      end
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }

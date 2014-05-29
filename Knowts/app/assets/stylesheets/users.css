@@ -10,13 +10,27 @@
 .users-link,
 .users-link a,
 .users-link a:hover,
-.users-table th{
+.users-table th,
+.user-edit {
     color: #ffffff;
 }
 
+
+.user-show h1 {
+    color: #a783e0;
+    text-align: center;
+}
+.users-h1, .user-edit {
+    text-align: center;
+}
 .users-table a, .users-table a:hover, .users-table {
     color: black;
 }
+
+.users-table a, .users-table a:hover {
+    text-decoration: underline;
+}
+
 .users-h1 #user-name {
     color: #a783e0;
     font-weight: bold;
@@ -64,4 +78,19 @@
 
 .user-show-content {
     text-align: center;
+}
+
+#error_explanation {
+    padding: 10px;
+    border: 2px solid #000000;
+    background-color: #a783e0;
+    color: white;
+    -webkit-box-shadow: inset 0px 0px 36px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 36px 5px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 36px 5px rgba(0,0,0,0.75);
+    text-align: center;
+}
+
+#error_explanation li {
+    list-style-type: none;
 }
