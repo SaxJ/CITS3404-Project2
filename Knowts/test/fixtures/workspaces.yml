@@ -3,7 +3,9 @@
 one:
   name: MyWorkspace1
   description: MyString1
+  owner: one
 
 two:
   name: MyWorkspace2
   description: MyString2
+  owner: two

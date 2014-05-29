@@ -3,7 +3,11 @@
 one:
   name: MyString
   email: one@one.com
+  workspaces: one
+  items: one
 
 two:
   name: MyString
   email: two@two.com
+  workspaces: two
+  items: two

@@ -3,7 +3,9 @@
 one:
   name: MyList1
   description: MyString1
+  workspace: one
 
 two:
   name: MyList2
   description: MyString2
+  workspace: two
