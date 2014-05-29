@@ -43,3 +43,7 @@ gem 'devise'
 
 # Test Coverage
 gem 'simplecov'
+
+#Use jquery-validation
+#gem 'jquery-validation-rails'
+

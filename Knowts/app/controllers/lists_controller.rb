@@ -22,12 +22,19 @@ class ListsController < ApplicationController
   def edit
     @list = List.find_by_id params[:id]
     @workspace = @list.workspace
+    if not @workspace.users.include? current_user
+      redirect_to :back, alert: "You don't have the permission to edit the list."
+    end
   end
 
   # POST /lists
   # POST /lists.json
   def create
     workspace = Workspace.find_by_id params[:workspace_id]
+    if not workspace.users.include? current_user
+      redirect_to :back, alert: "You don't have the permission for this workspace."
+      return
+    end
     @list = workspace.lists.create(list_params)
     workspace.save
 
@@ -45,6 +52,12 @@ class ListsController < ApplicationController
   # PATCH/PUT /lists/1
   # PATCH/PUT /lists/1.json
   def update
+    @list = List.find_by_id params[:id]
+    @workspace = @list.workspace
+    if not @workspace.users.include? current_user
+      redirect_to :back, alert: "You don't have the permission to edit the list."
+      return
+    end
     respond_to do |format|
       if @list.update(list_params)
         format.html { redirect_to @list, notice: 'List was successfully updated.' }
@@ -59,6 +72,12 @@ class ListsController < ApplicationController
   # DELETE /lists/1
   # DELETE /lists/1.json
   def destroy
+    @list = List.find_by_id params[:id]
+    @workspace = @list.workspace
+    if not @workspace.users.include? current_user
+      redirect_to :back, alert: "You don't have the permission to delete the list."
+      return
+    end
     @list.destroy
     respond_to do |format|
       format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }

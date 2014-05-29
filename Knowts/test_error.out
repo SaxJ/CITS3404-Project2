@@ -1,0 +1,206 @@
+Run options: --seed 65002
+
+# Running:
+
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+Finished in 0.254212s, 129.8129 runs/s, 0.0000 assertions/s.
+
+  1) Error:
+AccountsControllerTest#test_should_get_sign_in:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+  2) Error:
+AccountsControllerTest#test_should_get_sign_out:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+  3) Error:
+HomeControllerTest#test_should_get_about:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+  4) Error:
+HomeControllerTest#test_should_get_index:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+  5) Error:
+HomeControllerTest#test_should_get_sitemap:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+  6) Error:
+ItemsControllerTest#test_should_create_item:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+  7) Error:
+ItemsControllerTest#test_should_destroy_item:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+  8) Error:
+ItemsControllerTest#test_should_get_edit:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+  9) Error:
+ItemsControllerTest#test_should_get_index:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 10) Error:
+ItemsControllerTest#test_should_get_new:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 11) Error:
+ItemsControllerTest#test_should_show_item:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 12) Error:
+ItemsControllerTest#test_should_update_item:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 13) Error:
+ListsControllerTest#test_should_create_list:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 14) Error:
+ListsControllerTest#test_should_destroy_list:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 15) Error:
+ListsControllerTest#test_should_get_edit:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 16) Error:
+ListsControllerTest#test_should_get_index:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 17) Error:
+ListsControllerTest#test_should_get_new:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 18) Error:
+ListsControllerTest#test_should_show_list:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 19) Error:
+ListsControllerTest#test_should_update_list:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 20) Error:
+UsersControllerTest#test_should_create_user:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 21) Error:
+UsersControllerTest#test_should_destroy_user:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 22) Error:
+UsersControllerTest#test_should_get_edit:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 23) Error:
+UsersControllerTest#test_should_get_index:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 24) Error:
+UsersControllerTest#test_should_get_new:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 25) Error:
+UsersControllerTest#test_should_show_user:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 26) Error:
+UsersControllerTest#test_should_update_user:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 27) Error:
+WorkspacesControllerTest#test_should_create_workspace:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 28) Error:
+WorkspacesControllerTest#test_should_destroy_workspace:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 29) Error:
+WorkspacesControllerTest#test_should_get_edit:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 30) Error:
+WorkspacesControllerTest#test_should_get_index:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 31) Error:
+WorkspacesControllerTest#test_should_get_new:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 32) Error:
+WorkspacesControllerTest#test_should_show_workspace:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+
+ 33) Error:
+WorkspacesControllerTest#test_should_update_workspace:
+ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-05-26 11:40:43', '2014-05-26 11:40:43', 298486374)
+    
+
+33 runs, 0 assertions, 0 failures, 33 errors, 0 skips
