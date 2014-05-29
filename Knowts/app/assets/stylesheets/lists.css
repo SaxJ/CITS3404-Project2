@@ -15,3 +15,42 @@
     display: block;
     height: auto;
 }
+
+.list-controller-div {
+    min-height: 93%;
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+}
+
+.list-controller-div h1{
+    color: #a783e0;
+    text-align: center;
+    font-size: 2em;
+}
+
+.list-links {
+    text-align: left;
+}
+
+.list-links a, .list-links a:hover, .list-links, .lists-table th{
+    color:#ffffff;
+}
+
+.list-links a, .list-links a:hover, .lists-table a, .lists-table a:hover {
+    text-decoration: underline;
+}
+
+.lists-table a, .lists-table a:hover, .lists-table {
+    color: black;
+}
+
+.lists-table td{
+    background-color: #f8f6fc;
+    border-radius: 0;
+}
+
+
+.lists-table td:first-child {
+    color: #a783e0;
+}

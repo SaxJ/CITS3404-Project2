@@ -1,6 +1,34 @@
-<h1>Editing list</h1>
+<div class="list-controller-div">
+  <div class="list-links">
+    <%= link_to 'Show', @list %> |
+    <%= link_to 'Back', lists_path %>
+  </div>
+  <h1>Editing list</h1>
 
-<%= render 'form' %>
+<%= form_for @list do |f| %>
+    <% if @list.errors.any? %>
+        <div class="error_explanation">
+          <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+          <ul>
+            <% @list.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
-<%= link_to 'Show', @list %> |
-<%= link_to 'Back', lists_path %>
+    <div class="list-form">
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :description %><br>
+        <%= f.text_field :description %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Edit List", :class=> "button" %>
+      </div>
+    </div>
+<% end %>
+</div>

@@ -1,5 +1,31 @@
+<div class="list-controller-div">
 <h1>New list</h1>
 
-<%= render 'form' %>
+  <%= form_for [@workspace, @list], url: workspace_lists_path do |f| %>
+      <% if @list.errors.any? %>
+          <div class="error_explanation">
+            <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+            <ul>
+              <% @list.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
 
-<%= link_to 'Back', lists_path %>
+      <div class="list-form">
+        <div class="field">
+          <%= f.label :name %><br>
+          <%= f.text_field :name %>
+        </div>
+        <div class="field">
+          <%= f.label :description %><br>
+          <%= f.text_field :description %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Create List", :class=> "button" %>
+        </div>
+      </div>
+  <% end %>
+
+</div>

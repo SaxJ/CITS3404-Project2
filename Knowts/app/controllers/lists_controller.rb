@@ -20,6 +20,8 @@ class ListsController < ApplicationController
 
   # GET /lists/1/edit
   def edit
+    @list = List.find_by_id params[:id]
+    @workspace = @list.workspace
   end
 
   # POST /lists
