@@ -16,7 +16,7 @@
 }
 
 
-.user-show h1, .user-edit h1 {
+.user-show h1 {
     color: #a783e0;
     text-align: center;
 }
@@ -81,7 +81,6 @@
 }
 
 #error_explanation {
-    font-size: 17px;
     padding: 10px;
     border: 2px solid #000000;
     background-color: #a783e0;

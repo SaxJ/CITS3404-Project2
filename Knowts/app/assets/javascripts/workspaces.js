@@ -21,5 +21,3 @@ $('#add_workspace_user_button').click(function(e) {
     $('#add_workspace_user_button form').toggleClass('shown');
     $('#add_workspace_user_button').toggleClass('expanded');
 });
-
-

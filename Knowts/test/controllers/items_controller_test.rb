@@ -2,7 +2,6 @@ require 'test_helper'
 
 class ItemsControllerTest < ActionController::TestCase
   setup do
-
     @item = items(:one)
   end
 
