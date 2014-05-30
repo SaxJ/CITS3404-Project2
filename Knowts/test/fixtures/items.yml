@@ -4,8 +4,10 @@ one:
   content: MyItem1
   due: 2014-05-14 16:24:46
   list: one
+  completed: false
 
 two:
   content: MyItem2
   due: 2014-05-14 16:24:46
   list: two
+  completed: false

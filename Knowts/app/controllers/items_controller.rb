@@ -2,38 +2,57 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-  # GET /items
-  # GET /items.json
   def index
-    @items = Item.all
+    @list = List.find_by_id params[:list_id]
+    @workspace = @list.workspace
+    if not @workspace.users.include? current_user
+      redirect_to workspaces_path, alert: "You have no permission to view the items"
+    end
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
+    @item = Item.find_by_id params[:id]
+    @workspace = @item.list.workspace
+    if not @workspace.users.include? current_user
+      redirect_to workspaces_path, alert: "You have no permission to view the item"
+    end
   end
 
   # GET /items/new
   def new
+    @list = List.find_by_id params[:list_id]
+    @workspace = @list.workspace
+    if not @workspace.users.include? current_user
+      redirect_to workspaces_path, alert: "You have no permission to create item in this workspace"
+    end
     @item = Item.new
   end
 
   # GET /items/1/edit
   def edit
-    @list = List.find_by_id params[:list_id]
-    @workspace = @list.workspace
+    @item = Item.find_by_id params[:id]
+    @workspace = @item.list.workspace
+    if not @workspace.users.include? current_user
+      redirect_to workspaces_path, alert: "You have no permission to edit the items"
+    end
   end
 
   # POST /items
   # POST /items.json
   def create
-    list = List.find_by_id params[:list_id]
-    @item = list.items.create item_params
-    list.save
-    workspace = list.workspace
+    @list = List.find_by_id params[:list_id]
+    @workspace = @list.workspace
+    if not @workspace.users.include? current_user
+      redirect_to workspaces_path, alert: "You have no permission to create the items"
+      return
+    end
+    @item = @list.items.create item_params
+    @list.save
     respond_to do |format|
       if @item.save
-        format.html { redirect_to workspace, notice: 'Item was successfully created.' }
+        format.html { redirect_to @workspace, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
@@ -45,7 +64,12 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
+    @item = Item.find_by_id params[:id]
     @workspace = @item.list.workspace
+    if not @workspace.users.include? current_user
+      redirect_to workspaces_path, alert: "You have no permission to edit the items"
+      return
+    end
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @workspace, notice: 'Item was successfully updated.' }
@@ -58,11 +82,15 @@ class ItemsController < ApplicationController
   end
 
   def addme
-    @workspace = Workspace.find_by_id params[:w_id]
-    item = Item.find_by_id params[:id]
-    if not item.users.include? current_user
-      item.users << current_user
-      item.save
+    @item = Item.find_by_id params[:id]
+    @workspace = @item.list.workspace
+    if not @workspace.users.include? current_user
+      redirect_to workspaces_path, alert: "You have no permission add yourself to the item."
+      return
+    end
+    if not @item.users.include? current_user
+      @item.users << current_user
+      @item.save
       redirect_to @workspace, notice: 'User added to item'
     else
       redirect_to @workspace
@@ -70,11 +98,15 @@ class ItemsController < ApplicationController
   end
 
   def removeme
-    @workspace = Workspace.find_by_id params[:w_id]
-    item = Item.find_by_id params[:id]
-    if item.users.include? current_user
-  #    item.users.clear
-      item.users.delete(current_user)
+    @item = Item.find_by_id params[:id]
+    @workspace = @item.list.workspace
+    if not @workspace.users.include? current_user
+      redirect_to workspaces_path, alert: "Denied permission"
+      return
+    end
+    if @item.users.include? current_user
+      @item.users.delete(current_user)
+      @item.save
       redirect_to @workspace, notice: 'User removed from item'
     else
       redirect_to @workspace
@@ -82,21 +114,28 @@ class ItemsController < ApplicationController
   end
 
   def toggledone
-    @workspace = Workspace.find_by_id params[:w_id]
-    item = Item.find_by_id params[:id]
+    @item = Item.find_by_id params[:id]
+    @workspace = @item.list.workspace
+    if not @workspace.users.include? current_user
+      redirect_to workspaces_path, alert: "Denied permission"
+      return
+    end
 
     # this is a hack, because ruby complains about item.completed = not item.completed
-    item.completed = !item.completed
-    item.save
-
+    @item.completed = !@item.completed
+    @item.save
     redirect_to @workspace
   end
 
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
-    list = List.find_by_id(params[:list_id])
-    @workspace = list.workspace
+    @item = Item.find_by_id params[:id]
+    @workspace = @item.list.workspace
+    if not @workspace.users.include? current_user
+      redirect_to workspaces_path, alert: "Denied permission"
+      return
+    end
     @item.destroy
     respond_to do |format|
       format.html { redirect_to @workspace, notice: 'Item was successfully destroyed.' }
