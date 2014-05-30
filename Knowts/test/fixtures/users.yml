@@ -11,3 +11,7 @@ two:
   email: two@two.com
   workspaces: two
   items: two
+
+three:
+  name: MyString
+  email: three@three.com

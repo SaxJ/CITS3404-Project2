@@ -6,9 +6,9 @@ class WorkspacesController < ApplicationController
   # GET /workspaces.json
   def index
     @workspaces = Workspace.select {|ws| ws.users.include? current_user }
-    unless @workspaces
-      redirect_to new_workspace_path
-    end
+   # unless @workspaces
+   #   redirect_to new_workspace_path
+   # end
   end
 
   # GET /workspaces/1
@@ -24,6 +24,9 @@ class WorkspacesController < ApplicationController
 
   # GET /workspaces/1/edit
   def edit
+    if not @workspace.users.include? current_user
+      redirect_to :back, alert: "You don't have the permission to edit the workspace."
+    end
   end
 
   # POST /workspaces
@@ -47,6 +50,10 @@ class WorkspacesController < ApplicationController
   # PATCH/PUT /workspaces/1
   # PATCH/PUT /workspaces/1.json
   def update
+    if not @workspace.users.include? current_user
+      redirect_to :back, alert: "You don't have the permission to edit the workspace."
+      return
+    end
     respond_to do |format|
       if @workspace.update(workspace_params)
         format.html { redirect_to @workspace, notice: 'Workspace was successfully updated.' }
@@ -60,14 +67,18 @@ class WorkspacesController < ApplicationController
 
   def adduser
     @workspace = Workspace.find_by_id params[:id]
+    if not @workspace.users.include? current_user
+      redirect_to :back, alert: "You don't have the permission to edit the workspace."
+      return
+    end
     user = User.find_by_email params[:email]
-    notice = 'Not Found!'
+    notice = 'User Not Found!'
     if user
       if not @workspace.users.include? user
         @workspace.users << user
         notice = 'User added!'
       else
-        notice = 'Already added!'
+        notice = 'Already added user!'
       end
       @workspace.save
     end
@@ -80,6 +91,10 @@ class WorkspacesController < ApplicationController
 
   def removeuser
     @workspace = Workspace.find_by_id params[:w_id]
+    if not @workspace.users.include? current_user
+      redirect_to :back, alert: "You don't have the permission to edit the workspace."
+      return
+    end
     user = User.find_by_id params[:u_id]
     if user.id != @workspace.owner
       @workspace.users.delete(user)
@@ -92,6 +107,10 @@ class WorkspacesController < ApplicationController
 
   def removeworkspace
     @workspace = Workspace.find_by_id params[:w_id]
+    if not @workspace.users.include? current_user
+      redirect_to :back, alert: "You don't have the permission to remove the workspace."
+      return
+    end
     user = User.find_by_id params[:u_id]
     if user.id != @workspace.owner
       @workspace.users.delete(user)
@@ -100,13 +119,15 @@ class WorkspacesController < ApplicationController
     else
       destroy
     end
-
-
   end
 
   # DELETE /workspaces/1
   # DELETE /workspaces/1.json
   def destroy
+    if @workspace.owner != current_user.id
+      redirect_to :back, alert: "You don't have the permission to delete the workspace."
+      return
+    end
     @workspace.destroy
     respond_to do |format|
       format.html { redirect_to workspaces_url, notice: 'Workspace was successfully destroyed.' }
