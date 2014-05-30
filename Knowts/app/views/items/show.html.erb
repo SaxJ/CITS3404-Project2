@@ -1,10 +1,22 @@
-
-<p>
+<div class="item-content" style="font-size: 30px">
+  <div class="item-links">
+    <%= link_to "Back to workspace", workspace_path(@workspace) %>
+  </div>
+  <h1 style="font-size: 40px"> Showing item:</h1>
+  <p class="item-content-name">
   <strong>Content:</strong>
   <%= @item.content %>
 </p>
-
+<br/>
 <p>
   <strong>Due:</strong>
   <%= @item.due %>
 </p>
+  <br/>
+
+  <p>
+    <strong>Completed:</strong>
+    <%= @item.completed %>
+  </p>
+
+</div>
