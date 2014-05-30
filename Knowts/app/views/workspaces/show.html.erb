@@ -23,7 +23,7 @@
       <%= form_tag "#{@workspace.id}/adduser", method: 'post' do %>
         <div>Add by Email</div>
         <%= text_field_tag 'email' %>
-        <%= submit_tag 'Add that thang', :class =>"list-button" %>
+        <%= submit_tag 'Add user', :class =>"list-button" %>
       <% end %>
     </div>
   </div>
@@ -86,10 +86,13 @@
                       <%= f.datetime_select :due %>
                     </div>
                     <div class="field">
-                      <%= f.submit 'W00T!', :class => "list-button" %>
+                      <%= f.submit 'Create Item', :class => "list-button" %>
                     </div>
                 <% end %>
               </div>
+              <%= link_to "/workspaces/#{@workspace.id}/lists/#{list.id}", method: 'delete' do %>
+                <div  class="list-button" id="delete_list" style="font-size: 18px; text-align: center"> Delete List </div>
+              <% end %>
           </div>
         </div>
     <% end %>
@@ -103,7 +106,7 @@
               <%= f.text_area :description, placeholder: 'Description' %>
             </div>
             <div class="field">
-              <%= f.submit 'Hooah!', :class=>"list-button" %>
+              <%= f.submit 'Create List', :class=>"list-button" %>
             </div>
         <% end %>
     </div>

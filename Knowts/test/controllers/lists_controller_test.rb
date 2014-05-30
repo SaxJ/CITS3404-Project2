@@ -66,7 +66,7 @@ class ListsControllerTest < ActionController::TestCase
     assert_no_difference('List.count') do
       post :create, list: { description: @list.description, name: @list.name }, workspace_id: workspaces(:two)
     end
-    assert_redirected_to lists_path
+    assert_redirected_to workspaces_path
   end
 
   test "shouldn't create list, invalid name" do
@@ -93,7 +93,7 @@ class ListsControllerTest < ActionController::TestCase
   test "shouldn't get edit,  no permission" do
     sign_in @user
     get :edit, id: lists(:two), workspace_id: workspaces(:two)
-    assert_redirected_to lists_path
+    assert_redirected_to workspaces_path
   end
 
   test "should get edit" do
@@ -128,7 +128,7 @@ class ListsControllerTest < ActionController::TestCase
     assert_difference('List.count', -1) do
       delete :destroy, id: @list
     end
-    assert_redirected_to lists_path
+    assert_redirected_to @workspace
   end
 
   test "shouldn't destroy list, no permission" do
@@ -136,7 +136,7 @@ class ListsControllerTest < ActionController::TestCase
     assert_no_difference('List.count') do
       delete :destroy, id: lists(:two)
     end
-    assert_redirected_to lists_path
+    assert_redirected_to workspaces_path
   end
 
 end

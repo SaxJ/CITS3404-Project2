@@ -23,7 +23,7 @@ class ListsController < ApplicationController
     @list = List.find_by_id params[:id]
     @workspace = @list.workspace
     if not @workspace.users.include? current_user
-      redirect_to :back, alert: "You don't have the permission to edit the list."
+      redirect_to workspaces_path, alert: "You don't have the permission to edit the list."
     end
   end
 
@@ -32,7 +32,7 @@ class ListsController < ApplicationController
   def create
     workspace = Workspace.find_by_id params[:workspace_id]
     if not workspace.users.include? current_user
-      redirect_to :back, alert: "You don't have the permission for this workspace."
+      redirect_to workspaces_path, alert: "You don't have the permission for this workspace."
       return
     end
     @list = workspace.lists.create(list_params)
@@ -75,12 +75,12 @@ class ListsController < ApplicationController
     @list = List.find_by_id params[:id]
     @workspace = @list.workspace
     if not @workspace.users.include? current_user
-      redirect_to :back, alert: "You don't have the permission to delete the list."
+      redirect_to workspaces_path, alert: "You don't have the permission to delete the list."
       return
     end
     @list.destroy
     respond_to do |format|
-      format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }
+      format.html { redirect_to @workspace, notice: 'List was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -261,3 +261,21 @@ footer span {
     margin: 0 30px 0 30px;
 }
 
+.delete-button {
+    background-color: #BF1111;
+    color: #FFF;
+    font-family: 'Special Elite', cursive;
+    border: none;
+    border-radius: 8px;
+    font-size: 40px;
+    margin: 20px auto 20px auto;
+    padding: 10px 30px 10px 30px;
+    width: 15%;
+    transition: all 0.5s;
+}
+
+.delete-button:hover {
+    background-color: #f24c48;
+    box-shadow: 0 0  50px 1px #BF1111;
+    cursor: pointer;
+}

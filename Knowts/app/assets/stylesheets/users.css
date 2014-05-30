@@ -95,3 +95,6 @@
 #error_explanation li {
     list-style-type: none;
 }
+.user-edit {
+    height: 89%;
+}

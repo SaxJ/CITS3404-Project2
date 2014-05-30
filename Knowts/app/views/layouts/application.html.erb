@@ -17,12 +17,13 @@
   </div>
   <div class="right">
     <div> <%= link_to "Home", root_path %> </div>
-    <div> <%= link_to "About", about_path %> </div>
     <% if not user_signed_in? %>
+        <div> <%= link_to "About", about_path %> </div>
         <div> <%= link_to "Login", login_path %> </div>
         <div> <%= link_to "Signup", signup_path %> </div>
     <% else %>
         <div><%= link_to "Workspaces", workspaces_path %> </div>
+        <div><%= link_to "User Account", user_path(current_user) %> </div>
         <%= form_tag('/users/sign_out', method: 'delete', id: 'signout_form') do %>
             <div id="sign_out_button">Logout</div>
         <% end %>
